@@ -1,0 +1,120 @@
+name: "✨ Feature Request"
+description: "Propose a new feature or enhancement"
+title: "[Feature]: "
+labels: ["✨ enhancement", "📋 triage"]
+assignees:
+  - vectorcr
+projects:
+  - "Vector-Costa-Rica/10" # Vector Backlog Project
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Feature Request
+        Please provide detailed information about the feature you're proposing.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📝 Description"
+      description: "Provide a clear and concise description of the feature"
+      placeholder: "Describe what the feature should do and its purpose"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "❓ Problem Statement"
+      description: "What problem does this feature solve?"
+      placeholder: "Describe the current problem or limitation this feature would address"
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "💡 Proposed Solution"
+      description: "How should this feature work?"
+      placeholder: "Describe your proposed solution and how it should work"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "🎯 Priority Level"
+      description: "Select the priority level for this feature"
+      options:
+        - "🔥 p0-critical - Immediate attention required"
+        - "🚨 p1-urgent - Address as soon as possible"
+        - "⚡ p2-high - Plan to address soon"
+        - "📊 p3-medium - Address in current sprint"
+        - "📫 p4-low - Address when possible"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "🏷️ Feature Category"
+      description: "Select the type of feature"
+      options:
+        - "🎯 core - Core functionality changes"
+        - "🎨 ui-ux - User interface and experience changes"
+        - "⚡ performance - Performance related changes"
+        - "🔒 security - Security related changes"
+        - "📱 mobile - Mobile specific changes"
+        - "💾 database - Database related features"
+        - "🌐 api - API related features"
+        - "🧪 testing - Testing related features"
+        - "🔧 configuration - Configuration features"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: size
+    attributes:
+      label: "📏 Estimated Size"
+      description: "How complex is this feature?"
+      options:
+        - "🐜 size-xs - Extra small (< 2 hours)"
+        - "🦗 size-s - Small (< 4 hours)"
+        - "🐇 size-m - Medium (1 day)"
+        - "🦊 size-l - Large (2-3 days)"
+        - "🦌 size-xl - Extra large (> 3 days)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical-details
+    attributes:
+      label: "⚙️ Technical Details"
+      description: "Any technical considerations or implementation details"
+      placeholder: "Describe any technical details, dependencies, or implementation considerations"
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: "✅ Acceptance Criteria"
+      description: "What conditions must be met for this feature to be considered complete?"
+      placeholder: |
+        1. [ ] First acceptance criterion
+        2. [ ] Second acceptance criterion
+        3. [ ] Third acceptance criterion
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "📝 Additional Context"
+      description: "Add any other context about the feature here"
+      placeholder: "Any other information that might be relevant"
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        📋 This feature request will be reviewed and prioritized by the team.

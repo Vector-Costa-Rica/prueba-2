@@ -1,0 +1,102 @@
+name: "📚 Documentation Request"
+description: "Request documentation updates or additions"
+title: "[Docs]: "
+labels: ["📚 documentation", "📋 triage"]
+assignees:
+  - vectorcr
+projects:
+  - "Vector-Costa-Rica/10" # Vector Backlog Project
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Documentation Request
+        Please provide details about the documentation changes needed.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📝 Description"
+      description: "What documentation needs to be updated or created?"
+      placeholder: "Describe what documentation needs to be changed and why"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: "📑 Documentation Type"
+      description: "What type of documentation is this?"
+      options:
+        - "📖 Technical Documentation"
+        - "👥 Team Guidelines"
+        - "🔧 Setup Instructions"
+        - "📋 API Documentation"
+        - "🏗️ Architecture Documentation"
+        - "🧪 Testing Documentation"
+        - "🔐 Security Documentation"
+        - "📦 Deployment Documentation"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "🎯 Priority Level"
+      description: "How urgent is this documentation update?"
+      options:
+        - "🔥 p0-critical - Immediate attention required"
+        - "🚨 p1-urgent - Address as soon as possible"
+        - "⚡ p2-high - Plan to address soon"
+        - "📊 p3-medium - Address in current sprint"
+        - "📫 p4-low - Address when possible"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-state
+    attributes:
+      label: "📋 Current State"
+      description: "Describe the current documentation state"
+      placeholder: "What is currently documented and what needs to be changed?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-changes
+    attributes:
+      label: "📝 Proposed Changes"
+      description: "What changes should be made to the documentation?"
+      placeholder: "Describe the specific changes needed in the documentation"
+    validations:
+      required: true
+
+  - type: textarea
+    id: target-audience
+    attributes:
+      label: "👥 Target Audience"
+      description: "Who is this documentation for?"
+      placeholder: "Describe who will be using this documentation (e.g., developers, DevOps, QA)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: related-docs
+    attributes:
+      label: "🔗 Related Documentation"
+      description: "Links to related documentation that might need to be updated"
+      placeholder: "List any related documentation that might be affected by these changes"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "📝 Additional Context"
+      description: "Any other relevant information"
+      placeholder: "Add any other context that might be helpful"
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        📋 This documentation request will be reviewed and prioritized by the team.

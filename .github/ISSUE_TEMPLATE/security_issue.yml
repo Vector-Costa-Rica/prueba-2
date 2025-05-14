@@ -1,0 +1,114 @@
+name: "🔒 Security Issue"
+description: "Report a security vulnerability or concern"
+title: "[Security]: "
+labels: ["🔒 security", "📋 triage"]
+assignees:
+  - vectorcr
+projects:
+  - "Vector-Costa-Rica/10" # Vector Backlog Project
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Security Issue
+        Please provide detailed information about the security concern.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📝 Description"
+      description: "Provide a clear and concise description of the security issue"
+      placeholder: "Describe the security vulnerability or concern"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "⚠️ Severity Level"
+      description: "How severe is this security issue?"
+      options:
+        - "🔥 Critical - Immediate action required"
+        - "🚨 High - Address as soon as possible"
+        - "⚡ Medium - Plan to address soon"
+        - "📊 Low - Address when possible"
+        - "📫 Info - No immediate risk"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "🏷️ Security Category"
+      description: "What type of security issue is this?"
+      options:
+        - "🔐 Authentication"
+        - "🔑 Authorization"
+        - "🔒 Data Protection"
+        - "🌐 Network Security"
+        - "💾 Database Security"
+        - "🔍 Information Disclosure"
+        - "⚡ Performance Impact"
+        - "🛡️ DDoS Protection"
+        - "📱 Mobile Security"
+        - "🔧 Configuration"
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: "💥 Impact"
+      description: "What is the potential impact of this security issue?"
+      placeholder: "Describe the potential impact on the system, data, or users"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "🔄 Steps to Reproduce"
+      description: "How can we reproduce this security issue?"
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. See vulnerability
+    validations:
+      required: true
+
+  - type: textarea
+    id: affected-components
+    attributes:
+      label: "🎯 Affected Components"
+      description: "Which parts of the system are affected?"
+      placeholder: "List the affected components, services, or endpoints"
+    validations:
+      required: true
+
+  - type: textarea
+    id: mitigation
+    attributes:
+      label: "🛡️ Mitigation Steps"
+      description: "What steps have been taken to mitigate the issue?"
+      placeholder: "Describe any temporary fixes or workarounds implemented"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "📋 Relevant Logs"
+      description: "Any relevant security logs or error messages"
+      placeholder: "Paste relevant logs here..."
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "📝 Additional Context"
+      description: "Any other relevant information"
+      placeholder: "Add any other context that might be helpful"
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        📋 This security issue will be reviewed and addressed by the security team. 

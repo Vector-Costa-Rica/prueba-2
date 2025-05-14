@@ -1,0 +1,120 @@
+name: "🏗️ Infrastructure Issue"
+description: "Report an infrastructure problem or need"
+title: "[Infra]: "
+labels: ["🔧 configuration", "📋 triage"]
+assignees:
+  - vectorcr
+projects:
+  - "Vector-Costa-Rica/10" # Vector Backlog Project
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Infrastructure Issue
+        Please provide detailed information about the infrastructure concern.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📝 Description"
+      description: "Provide a clear and concise description of the infrastructure issue"
+      placeholder: "Describe the infrastructure problem and its impact"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "🎯 Priority Level"
+      description: "How urgent is this infrastructure issue?"
+      options:
+        - "🔥 p0-critical - Immediate attention required"
+        - "🚨 p1-urgent - Address as soon as possible"
+        - "⚡ p2-high - Plan to address soon"
+        - "📊 p3-medium - Address in current sprint"
+        - "📫 p4-low - Address when possible"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "🏷️ Infrastructure Category"
+      description: "What type of infrastructure issue is this?"
+      options:
+        - "🌐 Networking"
+        - "💻 Servers"
+        - "🗄️ Storage"
+        - "🔒 Security"
+        - "🔄 CI/CD"
+        - "📦 Deployment"
+        - "🔧 Configuration"
+        - "📊 Monitoring"
+        - "🛡️ Backup"
+        - "🌍 Environment"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-state
+    attributes:
+      label: "📋 Current State"
+      description: "What is the current state of the infrastructure?"
+      placeholder: "Describe the current infrastructure setup and configuration"
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-state
+    attributes:
+      label: "🎯 Desired State"
+      description: "What should the infrastructure look like?"
+      placeholder: "Describe the desired infrastructure setup and configuration"
+    validations:
+      required: true
+
+  - type: textarea
+    id: affected-services
+    attributes:
+      label: "🎯 Affected Services"
+      description: "Which services or components are affected?"
+      placeholder: "List the affected services, components, or systems"
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: "💥 Impact"
+      description: "What is the impact of this infrastructure issue?"
+      placeholder: "Describe the impact on services, users, or business operations"
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "📋 Relevant Logs"
+      description: "Any relevant infrastructure logs or error messages"
+      placeholder: "Paste relevant logs here..."
+
+  - type: textarea
+    id: monitoring
+    attributes:
+      label: "📊 Monitoring Data"
+      description: "Any relevant monitoring data or metrics"
+      placeholder: "Include any relevant monitoring data, graphs, or metrics"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "📝 Additional Context"
+      description: "Any other relevant information"
+      placeholder: "Add any other context that might be helpful"
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        📋 This infrastructure issue will be reviewed and prioritized by the team. 

@@ -1,0 +1,120 @@
+name: "🧪 Testing Issue"
+description: "Report a testing need or problem"
+title: "[Testing]: "
+labels: ["🧪 testing", "📋 triage"]
+assignees:
+  - vectorcr
+projects:
+  - "Vector-Costa-Rica/10" # Vector Backlog Project
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Testing Issue
+        Please provide detailed information about the testing need or problem.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📝 Description"
+      description: "Provide a clear and concise description of the testing issue"
+      placeholder: "Describe the testing need or problem"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "🎯 Priority Level"
+      description: "How urgent is this testing issue?"
+      options:
+        - "🔥 p0-critical - Immediate attention required"
+        - "🚨 p1-urgent - Address as soon as possible"
+        - "⚡ p2-high - Plan to address soon"
+        - "📊 p3-medium - Address in current sprint"
+        - "📫 p4-low - Address when possible"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "🏷️ Testing Category"
+      description: "What type of testing issue is this?"
+      options:
+        - "🧪 Unit Testing"
+        - "🔬 Integration Testing"
+        - "✅ Regression Testing"
+        - "🏗️ Build Testing"
+        - "🔍 Performance Testing"
+        - "🔒 Security Testing"
+        - "📱 Mobile Testing"
+        - "🌐 API Testing"
+        - "🎨 UI Testing"
+        - "📊 Data Testing"
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-scenario
+    attributes:
+      label: "📋 Test Scenario"
+      description: "What needs to be tested?"
+      placeholder: "Describe the scenario or functionality that needs testing"
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-requirements
+    attributes:
+      label: "✅ Test Requirements"
+      description: "What are the requirements for this test?"
+      placeholder: "Describe the requirements and acceptance criteria for the test"
+    validations:
+      required: true
+
+  - type: textarea
+    id: affected-components
+    attributes:
+      label: "🎯 Affected Components"
+      description: "Which components need to be tested?"
+      placeholder: "List the components, services, or features that need testing"
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-environment
+    attributes:
+      label: "🌍 Test Environment"
+      description: "What environment is needed for testing?"
+      placeholder: "Describe the required test environment, dependencies, or setup"
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-data
+    attributes:
+      label: "📊 Test Data"
+      description: "What test data is needed?"
+      placeholder: "Describe any required test data or test cases"
+
+  - type: textarea
+    id: automation
+    attributes:
+      label: "🤖 Automation Requirements"
+      description: "Should this test be automated?"
+      placeholder: "Describe any automation requirements or considerations"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "📝 Additional Context"
+      description: "Any other relevant information"
+      placeholder: "Add any other context that might be helpful"
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        📋 This testing issue will be reviewed and prioritized by the team. 

@@ -1,0 +1,66 @@
+name: Create Branch for New Issues
+
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+    inputs:
+      process_existing:
+        description: "Process existing issues"
+        required: true
+        default: false
+        type: boolean
+
+jobs:
+  create_branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ steps.generate_token.outputs.token }}
+          repository: ${{ github.repository }} # Explicitly set the repository
+          ref: main # or your default branch name
+
+      - name: Create branch for new issue
+        if: github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          REPO: ${{ github.repository }}
+        run: |
+          echo "Processing issue in repository: $REPO"
+
+          # Create sanitized branch name
+          CLEAN_TITLE=$(echo "$ISSUE_TITLE" | sed 's/[^a-zA-Z0-9-]/-/g' | tr '[:upper:]' '[:lower:]' | tr -s '-')
+          BRANCH_NAME="issue-${ISSUE_NUMBER}-${CLEAN_TITLE}"
+
+          echo "Creating branch: $BRANCH_NAME"
+
+          # Configure git
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+          # Ensure we're on the main branch
+          git checkout main
+          git pull origin main
+
+          # Create and push branch if it doesn't exist
+          if ! git ls-remote --exit-code --heads origin "$BRANCH_NAME"; then
+            echo "Creating new branch: $BRANCH_NAME"
+            git checkout -b "$BRANCH_NAME"
+            git push origin "$BRANCH_NAME"
+
+            # Comment on issue
+            gh issue comment "$ISSUE_NUMBER" --body "Branch \`$BRANCH_NAME\` created!" -R "$REPO"
+          else
+            echo "Branch $BRANCH_NAME already exists"
+          fi

@@ -1,0 +1,116 @@
+name: "🚀 Release Issue"
+description: "Track release-related tasks and requirements"
+title: "[Release]: "
+labels: ["🚀 release", "📋 triage"]
+assignees:
+  - vectorcr
+projects:
+  - "Vector-Costa-Rica/10" # Vector Backlog Project
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Release Issue
+        Please provide detailed information about the release requirements and tasks.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📝 Description"
+      description: "Provide a clear and concise description of the release"
+      placeholder: "Describe the release and its purpose"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "🎯 Priority Level"
+      description: "How urgent is this release?"
+      options:
+        - "🔥 p0-critical - Immediate release required"
+        - "🚨 p1-urgent - Release as soon as possible"
+        - "⚡ p2-high - Plan to release soon"
+        - "📊 p3-medium - Release in current sprint"
+        - "📫 p4-low - Release when possible"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: release-type
+    attributes:
+      label: "🏷️ Release Type"
+      description: "What type of release is this?"
+      options:
+        - "🚀 Major Release"
+        - "✨ Minor Release"
+        - "🐛 Patch Release"
+        - "🔄 Hotfix"
+        - "🔧 Maintenance Release"
+        - "📦 Package Update"
+    validations:
+      required: true
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: "📋 Release Changes"
+      description: "What changes are included in this release?"
+      placeholder: "List all changes, features, and fixes included in this release"
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "🔗 Dependencies"
+      description: "What dependencies need to be updated or checked?"
+      placeholder: "List any dependencies that need to be updated or verified"
+
+  - type: textarea
+    id: testing-requirements
+    attributes:
+      label: "🧪 Testing Requirements"
+      description: "What testing is required before release?"
+      placeholder: "Describe the testing requirements and acceptance criteria"
+    validations:
+      required: true
+
+  - type: textarea
+    id: deployment-steps
+    attributes:
+      label: "🚀 Deployment Steps"
+      description: "What steps are needed for deployment?"
+      placeholder: "List the deployment steps and requirements"
+    validations:
+      required: true
+
+  - type: textarea
+    id: rollback-plan
+    attributes:
+      label: "↩️ Rollback Plan"
+      description: "What is the rollback plan if issues occur?"
+      placeholder: "Describe the rollback procedure and requirements"
+    validations:
+      required: true
+
+  - type: textarea
+    id: documentation
+    attributes:
+      label: "📚 Documentation"
+      description: "What documentation needs to be updated?"
+      placeholder: "List any documentation that needs to be updated for this release"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "📝 Additional Context"
+      description: "Any other relevant information"
+      placeholder: "Add any other context that might be helpful"
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        📋 This release issue will be reviewed and managed by the team. 
